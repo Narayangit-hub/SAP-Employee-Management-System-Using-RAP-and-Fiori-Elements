@@ -1,0 +1,16 @@
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Employee'
+define root view entity ZI_EMPLOYEE
+  as select from zemployee
+  association [0..1] to ZI_DEPARTMENT as _Department
+    on $projection.DepartmentId = _Department.DepartmentId
+{
+  key employee_id     as EmployeeId,
+      employee_name   as EmployeeName,
+      salary          as Salary,
+      department_id   as DepartmentId,
+      employee_status as EmployeeStatus,
+      salary_status   as SalaryStatus,
+      last_changed_at as LastChangedAt,
+      _Department
+}

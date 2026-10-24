@@ -1,0 +1,47 @@
+managed implementation in class zbp_i_employee unique;
+strict ( 2 );
+
+define behavior for ZI_EMPLOYEE alias Employee
+persistent table zemployee
+lock master
+authorization master ( instance )
+etag master LastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  field ( readonly )
+    EmployeeId,
+    SalaryStatus,
+    CreatedBy,
+    CreatedAt,
+    LastChangedBy,
+    LastChangedAt;
+
+  action ( features : instance )
+    promoteEmployee result [1] $self;
+
+  validation validateSalary on save {
+    create;
+    update;
+  }
+
+  determination calculateSalaryStatus on modify {
+    create;
+    update;
+  }
+
+  mapping for zemployee {
+    EmployeeId     = employee_id;
+    EmployeeName   = employee_name;
+    Salary         = salary;
+    DepartmentId   = department_id;
+    EmployeeStatus = employee_status;
+    SalaryStatus   = salary_status;
+    CreatedBy      = created_by;
+    CreatedAt      = created_at;
+    LastChangedBy  = last_changed_by;
+    LastChangedAt  = last_changed_at;
+  }
+}

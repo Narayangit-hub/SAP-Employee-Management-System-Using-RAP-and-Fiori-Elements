@@ -1,0 +1,38 @@
+@Metadata.layer: #CORE
+annotate entity ZC_EMPLOYEE with {
+  @UI.headerInfo: {
+    typeName: 'Employee',
+    typeNamePlural: 'Employees',
+    title: { type: #STANDARD, value: 'EmployeeName' }
+  }
+
+  @UI.selectionField: [{ position: 10 }]
+  @UI.lineItem: [{ position: 10 }]
+  @UI.identification: [{ position: 10 }]
+  EmployeeId;
+
+  @UI.selectionField: [{ position: 20 }]
+  @UI.lineItem: [{ position: 20 }]
+  @UI.identification: [{ position: 20 }]
+  EmployeeName;
+
+  @UI.lineItem: [{ position: 30, importance: #HIGH }]
+  @UI.identification: [{ position: 30 }]
+  Salary;
+
+  @UI.lineItem: [{ position: 40 }]
+  @UI.identification: [{ position: 40 }]
+  EmployeeStatus;
+
+  @UI.lineItem: [{ position: 50 }]
+  @UI.identification: [{ position: 50 }]
+  SalaryStatus;
+
+  @UI.lineItem: [{
+    type: #FOR_ACTION,
+    dataAction: 'promoteEmployee',
+    label: 'Promote Employee',
+    position: 60
+  }]
+  EmployeeId;
+}

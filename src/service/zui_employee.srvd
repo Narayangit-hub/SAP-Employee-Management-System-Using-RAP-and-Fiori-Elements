@@ -1,0 +1,5 @@
+@EndUserText.label: 'Employee UI Service'
+define service ZUI_EMPLOYEE {
+  expose ZC_EMPLOYEE as Employee;
+  expose ZI_DEPARTMENT as Department;
+}

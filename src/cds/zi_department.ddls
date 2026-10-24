@@ -1,0 +1,8 @@
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Department'
+define root view entity ZI_DEPARTMENT
+  as select from zdepartment
+{
+  key department_id   as DepartmentId,
+      department_name as DepartmentName
+}

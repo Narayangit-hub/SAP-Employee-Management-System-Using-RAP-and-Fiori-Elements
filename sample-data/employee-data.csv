@@ -1,0 +1,5 @@
+EmployeeId,EmployeeName,Salary,DepartmentId,EmployeeStatus
+1001,Rahul,50000,0001,A
+1002,Amit,65000,0002,A
+1003,Rohit,35000,0001,R
+1004,Ankit,70000,0003,A

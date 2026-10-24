@@ -1,0 +1,17 @@
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Employee Consumption View'
+@Metadata.allowExtensions: true
+
+define root view entity ZC_EMPLOYEE
+  provider contract transactional_query
+  as projection on ZI_EMPLOYEE
+{
+  key EmployeeId,
+      EmployeeName,
+      Salary,
+      DepartmentId,
+      EmployeeStatus,
+      SalaryStatus,
+      LastChangedAt,
+      _Department
+}
